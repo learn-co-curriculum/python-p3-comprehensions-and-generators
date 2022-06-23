@@ -1,4 +1,7 @@
 #!/usr/bin/env python
 
-def print_fibonacci(length):
+def return_evens(num_list):
+    pass
+
+def make_exclamation(sentence_list):
     pass

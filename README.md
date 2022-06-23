@@ -18,6 +18,8 @@ can be processed in turn. You can loop through any iterable object.
 The most common data structure in Python.
 - **Range**: an immutable data type in Python that stores integers in a fixed
 pattern.
+- **Sequence**: a data structure in which data is stored and accessed in a
+specific order.
 
 ## Introduction
 
@@ -177,21 +179,21 @@ Time to get some practice! Write your code in the `list_comprehension.py` file
 in the `lib` folder. Run `pytest -x` to check your work. Your goal is to
 practice creating lists using list comprehensions.
 
-Write a function `print_fibonacci()` that prints each element of the
-[fibonacci sequence][fibonacci sequence] up to the length provided in the
-function's parameters.
+Using a list comprehension, write a function `collect_evens()` that returns a
+list of all of the even elements of a sequence of integers.
 
 ```py
-print_fibonacci(9)
-# 0
-# 1
-# 1
-# 2
-# 3
-# 5
-# 8
-# 13
-# 21
+collect_evens([0, 1, 3, 5, 7, 8, 9])
+# [0, 8]
+```
+
+Using a list comprehension, write a function `make_exclamation()` that takes
+a list of sentence strings and returns a list of sentence strings with
+exclamation marks at the end.
+
+```py
+make_exclamation("Hello", "I'm doing great", "Python is fun")
+# ["Hello!", "I'm doing great!", "Python is fun!"]
 ```
 
 When all of your tests are passing, submit your work using `git`.

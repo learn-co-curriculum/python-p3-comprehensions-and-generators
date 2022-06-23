@@ -1,42 +1,36 @@
 #!/usr/bin/env python
 
-from lib.list_comprehension import print_fibonacci
+from lib.list_comprehension import return_evens, make_exclamation
 
-import io
-import sys
+class TestReturnEvens:
+    '''function return_evens()'''
 
+    def test_return_empty_list_if_odds(self):
+        '''returns empty list when num_list has no evens'''
+        num_list = range(1,10,2)
+        assert return_evens(num_list) == []
 
-class TestPrintFibonacci:
-    '''function print_fibonacci()'''
+    def test_return_evens(self):
+        '''returns evens from num_list'''
+        num_list = range(10)
+        assert return_evens(num_list) == [0, 2, 4, 6, 8]
 
-    def test_print_fibonacci_zero(self):
-        '''prints empty list when length = 0'''
-        captured_out = io.StringIO()
-        sys.stdout = captured_out
-        print_fibonacci(0)
-        sys.stdout = sys.__stdout__
-        assert(captured_out.getvalue() == '')
+class TestMakeExclamation:
+    '''function make_exclamation()'''
 
-    def test_print_fibonacci_one(self):
-        '''prints 0 when length = 1'''
-        captured_out = io.StringIO()
-        sys.stdout = captured_out
-        print_fibonacci(1)
-        sys.stdout = sys.__stdout__
-        assert(captured_out.getvalue() == '0\n')
+    def test_return_empty_list_if_empty_input(self):
+        '''returns empty list when sentence_list is empty'''
+        assert make_exclamation([]) == []
 
-    def test_print_fibonacci_two(self):
-        '''prints 0\\n1 when length = 2'''
-        captured_out = io.StringIO()
-        sys.stdout = captured_out
-        print_fibonacci(2)
-        sys.stdout = sys.__stdout__
-        assert(captured_out.getvalue() == '0\n1\n')
-
-    def test_print_fibonacci_ten(self):
-        '''prints 0\\n1\\n1\\n2\\n3\\n5\\n8\\n13\\n21\\n34 when length = 10'''
-        captured_out = io.StringIO()
-        sys.stdout = captured_out
-        print_fibonacci(10)
-        sys.stdout = sys.__stdout__
-        assert(captured_out.getvalue() == '0\n1\n1\n2\n3\n5\n8\n13\n21\n34\n')
+    def test_return_exclamation_list(self):
+        '''returns list of sentences with exclamation marks'''
+        sentence_list = [
+            "I like computers",
+            "I require coffee",
+            "Live long and prosper",
+        ]
+        assert(make_exclamation(sentence_list) == [
+            "I like computers!",
+            "I require coffee!",
+            "Live long and prosper!",
+        ])
