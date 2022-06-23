@@ -72,9 +72,9 @@ list and assign its values in one line instead of three.
 
 <h3>A list!</h3>
 
-<code>my_lc = [n for n in range(10)]</code>
-<code>type(my_lc)</code>
-// <class 'list'>
+<code>my_lc = [n for n in range(10)]</code><br/>
+<code>type(my_lc)</code><br/>
+<code># <class 'list'></code>
 
 </p>
 </details>
