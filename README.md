@@ -162,12 +162,10 @@ generator expressions will use less memory and keep your servers happy.
 or generator expressions?</em></summary>
 <p>
 
-### List comprehensions!
+<h3>List comprehensions!</h3>
 
-```py
-list_comprehension = [n for n in range(10)]
-generator_expression = (n for n in range(10))
-```
+<code>list_comprehension = [n for n in range(10)]</code><br/>
+<code>generator_expression = (n for n in range(10))</code><br/>
 
 </p>
 </details>
