@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from lib.sequences import print_fibonacci
+from lib.list_comprehension import print_fibonacci
 
 import io
 import sys

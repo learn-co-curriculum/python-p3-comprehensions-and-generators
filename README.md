@@ -70,13 +70,15 @@ list and assign its values in one line instead of three.
 <details><summary><em>Which data type does a list comprehension return?</em></summary>
 <p>
 
-### A list!
+<h3>A list!</h3>
 
-```py
+<code>
 my_lc = [n for n in range(10)]
+
 type(my_lc)
-# <class 'list'>
-```
+
+// <class 'list'>
+</code>
 
 </p>
 </details>
