@@ -200,12 +200,7 @@ When all of your tests are passing, submit your work using `git`.
 
 ## Resources
 
-- [Common Sequence Operations][common sequence operations]
-- [Sequence Types](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range)
-- [More on Lists](https://docs.python.org/3/tutorial/datastructures.html#more-on-lists)
-- [Range Docs](https://docs.python.org/3/library/stdtypes.html#ranges)
-- [String Methods][string methods]
-
-[common sequence operations]: https://docs.python.org/3/library/stdtypes.html#common-sequence-operations
-[string methods]: https://www.w3schools.com/python/python_ref_string.asp
-[fibonacci sequence]: https://www.mathsisfun.com/numbers/fibonacci-sequence.html
+- [Python - List Comprehension](https://www.geeksforgeeks.org/python-list-comprehension/)
+- [When to Use a List Comprehension in Python](https://realpython.com/list-comprehension-python/)
+- [PEP 289 - Generator Expressions](https://peps.python.org/pep-0289/)
+- [Python | Generator Expressions](https://www.geeksforgeeks.org/generator-expressions/)
