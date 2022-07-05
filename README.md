@@ -6,20 +6,29 @@
 in a single line of code.
 - Execute and test Python code using the Python shell and `pytest`.
 
+***
+
 ## Key Vocab
 
-- **List Comprehension**: a syntax for creating lists in Python in a single
-line of code. Very fast, but require the whole list to exist in memory.
-- **Generator Expression**: a syntax for saving expressions that create lists
-in Python in a single line. Not very fast, but they save memory.
-- **Iterable**: able to be broken down into smaller parts of equal size that
-can be processed in turn. You can loop through any iterable object.
-- **List**: a mutable data type in Python that can store many types of data.
-The most common data structure in Python.
-- **Range**: an immutable data type in Python that stores integers in a fixed
-pattern.
 - **Sequence**: a data structure in which data is stored and accessed in a
 specific order.
+- **Index**: the location, represented by an integer, of an element in a
+sequence.
+- **Iterable**: able to be broken down into smaller parts of equal size that
+can be processed in turn. You can loop through any iterable object.
+- **Slice**: a group of neighboring elements in a sequence.
+- **Mutable**: an object that can be changed.
+- **Immutable**: an object that cannot be changed. (_Many immutable objects
+appear mutable because programmers reuse their names for new objects_.)
+- **List**: a mutable data type in Python that can store many types of data.
+The most common data structure in Python.
+- **Tuple**: an immutable data type in Python that can store many types of
+data.
+- **Range**: a data type in Python that stores integers in a fixed pattern.
+- **String**: an immutable data type in Python that stores unicode characters
+in a fixed pattern. Iterable and indexed, just like other sequences.
+
+***
 
 ## Introduction
 
@@ -32,6 +41,8 @@ simple way. Ideas that you could explain in a few words might take several
 incomprehensible lines in C. Python has several features intended to solve this
 problem; **list comprehensions** and **generator expressions** are among the
 most common.
+
+***
 
 ## List Comprehensions
 
@@ -91,6 +102,8 @@ new_list = [optional_operation(item) for item in old_list if optional_condition 
 You do not need to perform an operation on the items in your original list or
 include any conditions in your list comprehension. These options allow you to
 eliminate even more bulk from your code!
+
+***
 
 ## Generator Expressions
 
@@ -173,6 +186,8 @@ or generator expressions?</em></summary>
 </details>
 <br/>
 
+***
+
 ## Instructions
 
 Time to get some practice! Write your code in the `list_comprehension.py` file
@@ -197,6 +212,8 @@ make_exclamation("Hello", "I'm doing great", "Python is fun")
 ```
 
 When all of your tests are passing, submit your work using `git`.
+
+***
 
 ## Resources
 
