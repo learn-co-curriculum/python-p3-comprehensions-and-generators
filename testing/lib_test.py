@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 from lib.list_comprehension import return_evens, make_exclamation
 
