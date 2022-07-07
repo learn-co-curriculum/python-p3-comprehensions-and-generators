@@ -194,11 +194,11 @@ Time to get some practice! Write your code in the `list_comprehension.py` file
 in the `lib` folder. Run `pytest -x` to check your work. Your goal is to
 practice creating lists using list comprehensions.
 
-Using a list comprehension, write a function `collect_evens()` that returns a
+Using a list comprehension, write a function `return_evens()` that returns a
 list of all of the even elements of a sequence of integers.
 
 ```py
-collect_evens([0, 1, 3, 5, 7, 8, 9])
+return_evens([0, 1, 3, 5, 7, 8, 9])
 # [0, 8]
 ```
 
