@@ -173,6 +173,9 @@ When writing code for yourself, you will almost always use list comprehensions.
 If you're ever working with big datasets in your career, remember that
 generator expressions will use less memory and keep your servers happy.
 
+We will explore generator expressions in greater depth when we introduce **file
+input/output** and **database queries** later in phase 3.
+
 <details><summary><em>Which statement uses square brackets: list comprehensions
 or generator expressions?</em></summary>
 <p>
