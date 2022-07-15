@@ -210,7 +210,7 @@ a list of sentence strings and returns a list of sentence strings with
 exclamation marks at the end.
 
 ```py
-make_exclamation("Hello", "I'm doing great", "Python is fun")
+make_exclamation(["Hello", "I'm doing great", "Python is fun"])
 # ["Hello!", "I'm doing great!", "Python is fun!"]
 ```
 
