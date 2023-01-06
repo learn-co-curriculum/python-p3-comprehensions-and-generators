@@ -87,7 +87,7 @@ list and assign its values in one line instead of three.
 
 <code>my_lc = [n for n in range(10)]</code><br/>
 <code>type(my_lc)</code><br/>
-<code># <class 'list'></code>
+<code># &lt;class 'list'&gt;</code>
 
 </p>
 </details>
