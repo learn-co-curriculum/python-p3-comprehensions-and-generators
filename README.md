@@ -1,222 +1,78 @@
 # List Comprehensions and Generator Expressions
 
-## Learning Goals
+# Introduction
+Python provides powerful tools like list comprehensions and generator expressions to simplify complex tasks and make your code more concise. These features allow you to create lists and iterable objects with minimal code, enhancing code readability and efficiency.
 
-- Use list comprehensions and generator expressions to accomplish complex tasks
-in a single line of code.
-- Execute and test Python code using the Python shell and `pytest`.
+# List Comprehensions
 
-***
+List comprehensions are a concise way to create lists by applying an operation to each item in an existing iterable and optionally filtering items based on a condition.
 
-## Key Vocab
-
-- **Sequence**: a data structure in which data is stored and accessed in a
-specific order.
-- **Index**: the location, represented by an integer, of an element in a
-sequence.
-- **Iterable**: able to be broken down into smaller parts of equal size that
-can be processed in turn. You can loop through any iterable object.
-- **Slice**: a group of neighboring elements in a sequence.
-- **Mutable**: an object that can be changed.
-- **Immutable**: an object that cannot be changed. (_Many immutable objects
-appear mutable because programmers reuse their names for new objects_.)
-- **List**: a mutable data type in Python that can store many types of data.
-The most common data structure in Python.
-- **Tuple**: an immutable data type in Python that can store many types of
-data.
-- **Range**: a data type in Python that stores integers in a fixed pattern.
-- **String**: an immutable data type in Python that stores unicode characters
-in a fixed pattern. Iterable and indexed, just like other sequences.
-
-***
-
-## Introduction
-
-Guido van Rossum strove to make Python's syntax very easy to read. Most
-keywords in Python are common English, and many statements can be read
-left-to-right as if they were English sentences.
-
-Many coding languages suffer from the inability to convey simple ideas in a
-simple way. Ideas that you could explain in a few words might take several
-incomprehensible lines in C. Python has several features intended to solve this
-problem; **list comprehensions** and **generator expressions** are among the
-most common.
-
-***
-
-## List Comprehensions
-
-Certain lists are very straightforward to create- some are even passed into
-your code as parameters and don't require any work at all. Others take a bit
-more effort:
-
-```py
-squared_minus_one = list()
-
-for n in range(1, 11):
-    squared_minus_one.append((n ** 2) - 1)
-
-print(squared_minus_one)
-# [0, 3, 8, 15, 24, 35, 48, 63, 80, 99]
-```
-
-A list comprehension allows us to skip certain steps when we generate
-`squared_minus_one`:
-
-```py
-squared_minus_one = [(n **2) - 1 for n in range(1, 11)]
-
-print(squared_minus_one)
-# [0, 3, 8, 15, 24, 35, 48, 63, 80, 99]
-```
-
-A list comprehension allows us to instantiate a list object and perform a `for`
-loop to populate its values in a single line. Because the contents of our
-original `for` loop are straightforward, we can rewrite them on a single line
-without making our code hard to read.
-
-Additionally, because list comprehensions are executed as a single line of code,
-we do not need to define `squared_minus_one` beforehand. Using a list
-comprehension instead of a traditional `for` loop, we can create our new
-list and assign its values in one line instead of three.
-
-<details><summary><em>Which data type does a list comprehension return?</em></summary>
-<p>
-
-<h3>A list!</h3>
-
-<code>my_lc = [n for n in range(10)]</code><br/>
-<code>type(my_lc)</code><br/>
-<code># &lt;class 'list'&gt;</code>
-
-</p>
-</details>
-<br/>
-
-The syntax of a list comprehension is as follows:
-
-```py
+Syntax
+python
+Copy code
 new_list = [optional_operation(item) for item in old_list if optional_condition == True]
-```
+Example 1: Creating a list of squares minus one:
 
-You do not need to perform an operation on the items in your original list or
-include any conditions in your list comprehension. These options allow you to
-eliminate even more bulk from your code!
+python
+Copy code
+squared_minus_one = [(n ** 2) - 1 for n in range(1, 11)]
+# Result: [0, 3, 8, 15, 24, 35, 48, 63, 80, 99]
+Example 2: Filtering even numbers from a list:
 
-***
+python
+Copy code
+even_numbers = [x for x in num_list if x % 2 == 0]
 
-## Generator Expressions
+# Generator Expressions
 
-Generator expressions are very similar to list comprehensions. They use almost
-identical syntax to produce iterable objects in a single line:
+Generator expressions are similar to list comprehensions but create generator objects instead of lists. These objects are memory-efficient and ideal for processing large datasets.
 
-```py
-one_to_three = range(1,4)
+Syntax
+python
+Copy code
+generator_expression = (optional_operation(item) for item in old_list if optional_condition == True)
+Example: Creating a generator for squares:
 
-# A list comprehension uses square brackets
-squared_lc = [n ** 2 for n in one_to_three]
+python
+Copy code
+squared_generator = (n ** 2 for n in range(1, 11))
 
-# A generator expression uses parentheses
-squared_ge = (n ** 2 for n in one_to_three)
+# When to Use List Comprehensions vs. Generator Expressions
 
-# Looping through each shows identical values...
-for n in squared_lc:
-    print(n)
+* List Comprehensions: Use when you need a complete list and want fast access to the data. Suitable for small to moderately sized datasets.
 
-# 1
-# 4
-# 9
+* Generator Expressions: Use when memory efficiency is crucial, especially for large datasets. Generators are lazy and only compute values as needed.
 
-for n in squared_ge:
-    print(n)
+Practice
+In the list_comprehension.py file, you can find practice exercises for creating lists using list comprehensions:
 
-# 1
-# 4
-# 9
+return_evens(): Returns a list of even elements from a sequence of integers.
+Example:
 
-# But the objects are NOT identical
-print(squared_lc)
-# [1, 4, 9]
-print(squared_ge)
-# <generator object <genexpr>>
-```
+python
+Copy code
+return_evens([0, 1, 3, 5, 7, 8, 9])  # Result: [0, 8]
+make_exclamation(): Adds exclamation marks at the end of sentence strings in a list.
+Example:
 
-Generator expressions produce `generator` objects instead of lists. In most
-code that you will write, list comprehensions are preferable.
-
-The key difference between list comprehensions and generator expressions is
-that **list comprehensions create new, complete lists** while **generator
-expressions save the code to create new, complete lists**.
-
-Because list comprehensions create the lists as soon as they are read by the
-interpreter, their data is easily accessible. A list is much faster to use than
-a generator.
-
-That being said, you might not always want a full list hanging around in
-memory. Let's check the size of the two objects in the Python shell:
-
-```py
-# sys allows us to look into system memory, among other things
-import sys
-
-list_comprehension = [n for n in range(100000)]
-generator_expression = (n for n in range(100000))
-
-# Returns the size of an object in bytes
-sys.getsizeof(list_comprehension)
-# 824456
-sys.getsizeof(generator_expression)
-# 112
-```
-
-When writing code for yourself, you will almost always use list comprehensions.
-If you're ever working with big datasets in your career, remember that
-generator expressions will use less memory and keep your servers happy.
-
-We will explore generator expressions in greater depth when we introduce **file
-input/output** and **database queries** later in phase 3.
-
-<details><summary><em>Which statement uses square brackets: list comprehensions
-or generator expressions?</em></summary>
-<p>
-
-<h3>List comprehensions!</h3>
-
-<code>list_comprehension = [n for n in range(10)]</code><br/>
-<code>generator_expression = (n for n in range(10))</code><br/>
-
-</p>
-</details>
-<br/>
-
-***
-
-## Instructions
-
-Time to get some practice! Write your code in the `list_comprehension.py` file
-in the `lib` folder. Run `pytest -x` to check your work. Your goal is to
-practice creating lists using list comprehensions.
-
-Using a list comprehension, write a function `return_evens()` that returns a
-list of all of the even elements of a sequence of integers.
-
-```py
-return_evens([0, 1, 3, 5, 7, 8, 9])
-# [0, 8]
-```
-
-Using a list comprehension, write a function `make_exclamation()` that takes
-a list of sentence strings and returns a list of sentence strings with
-exclamation marks at the end.
-
-```py
+python
+Copy code
 make_exclamation(["Hello", "I'm doing great", "Python is fun"])
-# ["Hello!", "I'm doing great!", "Python is fun!"]
-```
+# Result: ["Hello!", "I'm doing great!", "Python is fun!"]
+Ensure all tests pass using pytest -x before submitting your work.
+
+Remember that list comprehensions and generator expressions can greatly improve your Python coding skills by simplifying complex operations and enhancing code readability.
 
 When all of your tests are passing, submit your work using `git`.
 
 ***
+
+## Resources
+
+- [Python - List Comprehension](https://www.geeksforgeeks.org/python-list-comprehension/)
+- [When to Use a List Comprehension in Python](https://realpython.com/list-comprehension-python/)
+- [PEP 289 - Generator Expressions](https://peps.python.org/pep-0289/)
+- [Python | Generator Expressions](https://www.geeksforgeeks.org/generator-expressions/)
 
 ## Resources
 
